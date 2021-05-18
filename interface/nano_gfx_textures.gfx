@@ -1,0 +1,3 @@
+spriteTypes = {
+	spriteType = { name = "GFX_megastructure_gray_goo_world"					textureFile = "gfx/interface/planetview/mega_gray_goo.dds" }
+}

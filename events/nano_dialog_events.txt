@@ -1,0 +1,48 @@
+namespace = nano_dialog
+
+####################################################
+### Orbital Hyperfog ###############################
+####################################################
+country_event = {
+	id = nano_dialog.1310
+	title = "nano_dialog.1310.name"
+	desc = "nano_dialog.1310.desc"
+	picture = GFX_evt_gray_goo
+	show_sound = event_dyson_sphere_build_start
+	location = event_target:nano_planet
+	is_triggered_only = yes
+	option = { name = "nano_dialog.1310.a" }
+}
+
+country_event = {
+	id = nano_dialog.1311
+	title = "nano_dialog.1311.name"
+	desc = "nano_dialog.1311.desc"
+	picture = GFX_evt_gray_goo
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = event_target:nano_planet
+	is_triggered_only = yes
+	option = { name = "nano_dialog.1311.a" }
+}
+
+country_event = {
+	id = nano_dialog.1312
+	title = "nano_dialog.1312.name"
+	desc = "nano_dialog.1312.desc"
+	picture = GFX_evt_gray_goo
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = event_target:nano_planet
+	is_triggered_only = yes
+	option = { name = "nano_dialog.1312.a" }
+}
+
+country_event = {
+	id = nano_dialog.1313
+	title = "nano_dialog.1313.name"
+	desc = "nano_dialog.1313.desc"
+	picture = GFX_evt_gray_goo
+	show_sound = event_dyson_sphere_build_complete
+	location = event_target:nano_planet
+	is_triggered_only = yes
+	option = { name = "nano_dialog.1313.a" }
+}

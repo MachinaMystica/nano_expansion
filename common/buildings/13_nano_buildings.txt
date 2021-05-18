@@ -1,0 +1,592 @@
+#############
+# Resource buildings
+#############
+
+building_nanite_fabricator_1 = {
+	base_buildtime = @b3_time
+
+	category = manufacturing
+
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			AND = {
+				exists = owner
+				buildings_no_motes = yes
+				buildings_no_crystals = yes
+				buildings_no_exotic_gases = yes
+			}
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_nanoroboticist_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_nanoroboticist_drone_add = 1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 1000
+		}
+		upkeep = {
+			rare_crystals = 2
+			volatile_motes = 2
+			exotic_gases = 2
+			energy = 5
+		}
+	}
+
+	upgrades = {
+		building_nanite_fabricator_2
+	}
+
+	prerequisites = {
+		"tech_micromechanic_constructs"
+	}
+
+	ai_resource_production = {
+		nanites = 2
+	}
+}
+
+building_nanite_fabricator_2 = {
+	base_buildtime = @b3_time
+
+	category = manufacturing
+
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			AND = {
+				exists = owner
+				buildings_no_motes = yes
+				buildings_no_crystals = yes
+				buildings_no_exotic_gases = yes
+			}
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_nanoroboticist_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_nanoroboticist_drone_add = 3
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 1000
+		}
+		upkeep = {
+			rare_crystals = 3
+			volatile_motes = 3
+			exotic_gases = 3
+			energy = 10
+		}
+	}
+
+	upgrades = {
+		building_nanite_fabricator_3
+	}
+
+	prerequisites = {
+		"tech_nanoscale_automatons"
+	}
+
+	ai_resource_production = {
+		nanites = 6
+	}
+}
+
+building_nanite_fabricator_3 = {
+	base_buildtime = @b3_time
+
+	category = manufacturing
+
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			AND = {
+				exists = owner
+				buildings_no_motes = yes
+				buildings_no_crystals = yes
+				buildings_no_exotic_gases = yes
+			}
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_nanoroboticist_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_nanoroboticist_drone_add = 5
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 1000
+		}
+		upkeep = {
+			rare_crystals = 5
+			volatile_motes = 5
+			exotic_gases = 5
+			energy = 15
+		}
+	}
+
+	prerequisites = {
+		"tech_femtoscale_robotics"
+	}
+
+	ai_resource_production = {
+		nanites = 10
+	}
+}
+
+
+building_universal_constructor_1 = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	category = manufacturing
+
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		OR = {
+			building_relaxed_basic_income_check = yes
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = industrial_focus_limit
+			fail_text = ONLY_ONE_INDUSTRIAL_BUILDING
+			OR = {
+				uses_district_set = city_world
+				NOR = {
+					has_building = building_factory_1
+					has_building = building_factory_2
+					has_building = building_factory_3
+					has_building_construction = building_factory_1
+					has_building_construction = building_factory_2
+					has_building_construction = building_factory_3
+
+					has_building_construction = building_foundry_1
+				}
+			}
+
+		}
+	}
+
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_alloy_drone_add = @b1_jobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_fabricator_add = @b1_jobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_foundry_add = @b1_jobs
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	upgrades = {
+		building_universal_constructor_2
+	}
+
+	prerequisites = {
+		tech_self_reconfiguring_micromatter
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_foundry_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_alloy_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_fabricator_effect_desc
+	}
+
+	ai_resource_production = {
+		alloys = 4 # This is an important building for future upgrades
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = { # Overvalue this building if this planet is a major source of alloys.
+		alloys = 4
+		trigger = {
+			planet_resource_compare = {
+				resource = alloys
+				value >= 8
+				type = produces
+			}
+		}
+	}
+	ai_resource_production = {
+		alloys = 4
+		trigger = {
+			planet_resource_compare = {
+				resource = alloys
+				value >= 16
+				type = produces
+			}
+		}
+	}
+	ai_resource_production = {
+		alloys = 4
+		trigger = {
+			planet_resource_compare = {
+				resource = alloys
+				value >= 24
+				type = produces
+			}
+		}
+	}
+}
+
+building_universal_constructor_2 = {
+	base_buildtime = @b3_time
+	can_build = no
+	category = manufacturing
+
+	allow = {
+		has_major_upgraded_capital = yes
+		buildings_upgrade_allow = yes
+	}
+
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			AND = {
+				exists = owner
+				buildings_no_motes = yes
+			}
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+			volatile_motes = @b4_rare_cost
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			volatile_motes = @b4_rare_upkeep
+		}
+	}
+
+	prerequisites = {
+		tech_self_replicating_nanites
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_foundry_add = @b1_jobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_alloy_drone_add = @b1_jobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_fabricator_add = @b1_jobs
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_industrial = yes
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = building_foundry_3_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_industrial = yes
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = building_foundry_3_hive_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_industrial = yes
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = building_foundry_3_machine_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_set = city_world
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = building_foundry_3_arcology_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_set = city_world
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = building_foundry_3_arcology_hive_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_set = city_world
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = building_foundry_3_arcology_machine_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_set = habitat
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = building_foundry_3_habitat_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_set = habitat
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = building_foundry_3_habitat_hive_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_set = habitat
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = building_foundry_3_habitat_machine_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_set = ring_world
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = building_foundry_3_ring_world_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_set = ring_world
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = building_foundry_3_ring_world_hive_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			uses_district_set = ring_world
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = building_foundry_3_ring_world_machine_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_foundry_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_fabricator_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_alloy_drone_effect_desc
+	}
+
+	ai_resource_production = {
+		alloys = 16
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		alloys = 16
+		trigger = {
+			planet_resource_compare = {
+				resource = alloys
+				value >= 16
+				type = produces
+			}
+		}
+	}
+	ai_resource_production = {
+		alloys = 16
+		trigger = {
+			planet_resource_compare = {
+				resource = alloys
+				value >= 32
+				type = produces
+			}
+		}
+	}
+	ai_resource_production = {
+		alloys = 16
+		trigger = {
+			planet_resource_compare = {
+				resource = alloys
+				value >= 48
+				type = produces
+			}
+		}
+	}
+}

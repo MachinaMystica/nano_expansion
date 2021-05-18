@@ -1,0 +1,23 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_ship_part_nano_deconstructor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_mass_deconstructor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_nano_armor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_nano_armor.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_phased_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_phased_beam.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_autowar"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_autowar.dds"
+	}
+
+}

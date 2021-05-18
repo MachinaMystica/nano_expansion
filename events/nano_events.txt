@@ -1,0 +1,95 @@
+namespace = nano
+
+### Bombardment Events ###
+
+# Subsumption Bombardment
+planet_event = {
+	id = nano.1300
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_orbital_bombardment_stance = subsumption
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+			}
+		}
+		habitable_planet = yes
+	}
+
+	immediate = {
+		owner = {
+			add_static_war_exhaustion = {
+				attacker = from
+				location = root
+				value_for_planet_destruction = 0.5
+			}
+			country_event = { id = nano.1301 }
+		}
+		from = { country_event = { id = nano.1302 } }
+		change_pc = pc_gray_goo
+		clear_planet_modifiers = yes
+		reroll_planet = yes
+		add_modifier = { modifier = terraforming_candidate days = -1 }
+	}
+}
+
+# Planet is turned into gray goo world by Subsumption bombing stance (former owner)
+country_event = {
+	id = nano.1301
+	title = "nano.1301.name"
+	desc = "nano.1301.desc"
+	picture = GFX_evt_gray_gooed_planet
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = nano.1301.a
+		custom_tooltip = "bombed_to_gray_goo_world"
+	}
+}
+
+# Planet is turned into gray goo world by Subsumption bombing stance (bombarder)
+country_event = {
+	id = nano.1302
+	title = "nano.1301.name"
+	desc = "nano.1302.desc"
+	picture = GFX_evt_gray_gooed_planet
+	location = from
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_ascension_perk = ap_become_the_crisis
+			}
+			country_event = { id = crisis.5016 }
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		custom_tooltip = bombed_to_gray_goo_world
+	}
+}
+
+### Ascension Perk Events ###
+
+# Nanotech Announcement
+country_event = {
+	id = nano.1303
+	title = "nano.1303.name"
+	desc = "nano.1303.desc"
+	picture = GFX_evt_gray_goo
+	show_sound = event_the_flesh_is_weak
+
+	is_triggered_only = yes
+
+	option = {
+		name = "nano.1303.a"
+		custom_tooltip = NANOTECHNOLOGY_TREE_UNLOCKED
+	}
+}
