@@ -1,4 +1,4 @@
-version="1.0"
+version="1.18"
 tags={
 	"Events"
 	"Economy"
@@ -8,6 +8,14 @@ tags={
 	"Overhaul"
 	"Technologies"
 	"Graphics"
+	"Nanites"
+	"Leaders"
+	"Traits"
+	"Robots"
+	"Synths"
+	"Chinese Translation"
 }
-name="Nanites Expansion"
+name="Nanite Expansion"
+picture="thumbnail.png"
 supported_version="3.0.*"
+remote_file_id="2498990660"

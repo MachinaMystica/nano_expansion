@@ -88,6 +88,10 @@ tech_ubiquitous_smartdust = {
 	prerequisites = { "tech_self_reconfiguring_micromatter" }
 	weight = @tier3weight3
 
+    modifier = {
+        description = tech_utility_fogs_modifier_desc
+    }
+
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -139,6 +143,46 @@ tech_ubiquitous_smartdust = {
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+
+# Micro-Manufacturing Optimization - Nanite Production Boost 1
+tech_micro_optimizations = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	is_rare = yes
+	category = { materials }
+	prerequisites = { "tech_self_reconfiguring_micromatter" }
+	weight = @tier3weight3
+
+	modifier = {
+		planet_jobs_nanites_produces_mult = 0.05
+	}
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
 			}
 		}
 	}
@@ -295,6 +339,7 @@ tech_self_assembling_infrastructure = {
 
 	modifier = {
 		planet_max_buildings_add = 1
+		planet_colony_development_speed_mult = 0.25
 	}
 
 	weight_modifier = {
@@ -363,10 +408,6 @@ tech_self_replicating_nanites = {
 	prerequisites = { "tech_emergent_intelligences" }
 	weight = @tier4weight2
 
-	modifier = {
-		planet_jobs_nanites_produces_mult = 0.1
-	}
-
 	weight_modifier = {
 		factor = 2
 		modifier = {
@@ -398,6 +439,10 @@ tech_subsumption_bombardment = {
 	ai_update_type = military
 	prerequisites = { "tech_self_replicating_nanites" "tech_military_micromachines" }
 	weight = @tier4weight3
+
+    modifier = {
+        description = tech_subsumption_bombardment_modifier_desc
+    }
 	
 	weight_modifier = {
 		modifier = {
@@ -443,7 +488,6 @@ tech_identity_subsumption = {
 	area = society
 	category = { biology }
 	tier = 4
-	is_rare = yes
 	prerequisites = { "tech_self_replicating_nanites" "tech_military_micromachines" }
 	weight = @tier4weight3
 
@@ -532,11 +576,8 @@ tech_nanoform_workers = {
 	is_rare = yes
 	weight = @tier4weight3
 
-
-	gateway = robotics
-
 	modifier = {
-		planet_jobs_robotic_produces_mult = 0.15
+		ROBOT_species_trait_points_add = 1
 	}
 
 	potential = {
@@ -625,6 +666,25 @@ tech_nanoform_workers = {
 	}
 }
 
+# Nanite Entity Trait Modification
+tech_nanoform_uplifting = {
+	area = engineering
+	cost = @tier4cost3
+	tier = 4
+	is_rare = yes
+	category = { industry }
+	ai_update_type = military
+	weight = 0
+	
+	weight_modifier = {
+		factor = 0 		# Can only be researched through project
+	}
+
+    modifier = {
+        description = tech_nanoform_uplifting_modifier_desc
+    }
+}
+
 # Nanoform Workers - Traits 1b - Gestalt
 tech_nanoform_gestalt = {
 	cost = @tier4cost3
@@ -639,7 +699,7 @@ tech_nanoform_gestalt = {
 	gateway = robotics
 
 	modifier = {
-		planet_jobs_robotic_produces_mult = 0.15
+		MACHINE_species_trait_points_add = 1
 	}
 
 	potential = {
@@ -728,6 +788,25 @@ tech_nanoform_gestalt = {
 	}
 }
 
+# Terminal Nanite Trait Modification
+tech_terminal_integration = {
+	area = engineering
+	cost = @tier4cost3
+	tier = 4
+	is_rare = yes
+	category = { voidcraft }
+	ai_update_type = military
+	weight = 0
+
+    modifier = {
+        description = tech_terminal_integration_modifier_desc
+    }
+	
+	weight_modifier = {
+		factor = 0 		# Can only be researched through project
+	}
+}
+
 # Smart Immune Systems - Traits 1c - Organic
 tech_smart_immune_systems = {
 	cost = @tier4cost3
@@ -739,7 +818,7 @@ tech_smart_immune_systems = {
 	weight = @tier4weight3
 
 	modifier = {
-		pop_growth_speed = 0.15
+		pop_environment_tolerance = 0.10
 	}
 
 	potential = {
@@ -776,6 +855,25 @@ tech_smart_immune_systems = {
 	}
 }
 
+# Smart Immune System Trait Modification
+tech_perpetual_herd_immunity = {
+	cost = @tier4cost3
+	area = society
+	category = { biology }
+	tier = 4
+	is_rare = yes
+	ai_update_type = all
+	weight = 0
+
+	weight_modifier = {
+		factor = 0 		# Can only be researched through project
+	}
+
+    modifier = {
+        description = tech_perpetual_herd_immunity_modifier_desc
+    }
+}
+
 # Orbital Hyperfogs - Megastructure 1
 tech_orbital_hyperfogs = {
 	area = engineering
@@ -786,6 +884,10 @@ tech_orbital_hyperfogs = {
 	prerequisites = { "tech_self_replicating_nanites" }
 	weight = @tier4weight3
 	is_rare = yes
+
+    modifier = {
+        description = tech_orbital_hyperfogs_modifier_desc
+    }
 
 	weight_modifier = {
 		modifier = {
@@ -828,6 +930,7 @@ tech_photosynthetic_fogs = {
 	cost = @tier4cost3
 	area = society
 	tier = 4
+	is_rare = yes
 	category = { biology }
 	prerequisites = { "tech_self_replicating_nanites" }
 	weight = @tier4weight3
@@ -866,6 +969,10 @@ tech_autonomous_fogs = {
 	category = { industry }
 	prerequisites = { "tech_self_replicating_nanites" }
 	weight = @tier4weight3
+
+    modifier = {
+        description = tech_autonomous_fogs_modifier_desc
+    }
 
 	weight_modifier = {
 		modifier = {
@@ -918,6 +1025,46 @@ tech_autonomous_fogs = {
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+
+# Nano-Manufacturing Optimization - Nanite Production Boost 2
+tech_nano_optimizations = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	is_rare = yes
+	category = { materials }
+	prerequisites = { "tech_self_replicating_nanites" "tech_micro_optimizations" }
+	weight = @tier4weight3
+
+	modifier = {
+		planet_jobs_nanites_produces_mult = 0.1
+	}
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
 			}
 		}
 	}
@@ -1125,6 +1272,7 @@ tech_sophont_infrastructure = {
 
 	modifier = {
 		planet_max_buildings_add = 1
+		planet_colony_development_speed_mult = 0.25
 	}
 
 	weight_modifier = {
@@ -1159,9 +1307,9 @@ tech_sophont_fogs = {
 	prerequisites = { "tech_universal_programmable_matter" }
 	weight = @tier5weight3
 
-	modifier = {
-		planet_jobs_nanites_produces_mult = 0.1
-	}
+    modifier = {
+        description = tech_sophont_fogs_modifier_desc
+    }
 
 	weight_modifier = {
 		modifier = {
@@ -1360,5 +1508,474 @@ tech_optical_phased_arrays = {
 				has_trait = "leader_trait_expertise_particles"
 			}
 		}
+	}
+}
+
+# Femto-Manufacturing Optimization - Nanite Production Boost 3
+tech_femto_optimizations = {
+	cost = @tier5cost3
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { materials }
+	prerequisites = { "tech_universal_programmable_matter" "tech_nano_optimizations" }
+	weight = @tier5weight3
+
+	modifier = {
+		planet_jobs_nanites_produces_mult = 0.15
+	}
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+### Tier 6 Atto-Scale ###
+
+# Attoscale Mechanics - Nanite Fabricator Base Improvement
+tech_attoscale_mechanics = {
+	cost = @nanotier6cost1
+	area = engineering
+	tier = 5
+	category = { materials }
+	prerequisites = { "tech_sophont_fogs" }
+	weight = @tier5weight3
+	is_rare = yes
+
+    modifier = {
+        description = tech_attoscale_mechanics_modifier_desc
+    }
+	
+	weight_modifier = {
+		factor = 0.10
+		modifier = {
+			factor = 0
+			NOR = {
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 0.10
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+# Toposophont Systems - Nanite AIs 4
+tech_toposophont_systems = {
+	area = physics
+	tier = 5
+	cost = @nanotier6cost1
+	category = { computing }
+	prerequisites = { "tech_attoscale_mechanics" }
+	weight = @tier5weight3
+
+	modifier = {
+		all_technology_research_speed = 0.25
+	}
+
+	weight_modifier = {
+		factor = 0.15
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 0.15
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+# Nano Encryption
+tech_nano_encryption = {
+	area = physics
+	tier = 5
+	cost = @nanotier6cost2
+	category = { computing }
+	prerequisites = { "tech_encryption_3" "tech_toposophont_systems" }
+	weight = @tier5weight3
+
+	modifier = {
+		intel_encryption_add = 2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOR = {
+				is_ai = yes # AIs don't get the informative event that flags this
+				has_country_flag = first_spynetwork
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+# Nano Decryption
+tech_nano_decryption = {
+	area = physics
+	tier = 5
+	cost = @nanotier6cost2
+	category = { computing }
+	prerequisites = { "tech_decryption_3" "tech_toposophont_systems" }
+	weight = @tier5weight3
+
+	modifier = {
+		intel_decryption_add = 2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOR = {
+				is_ai = yes # AIs don't get the informative event that flags this
+				has_country_flag = first_spynetwork
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+# Atto-Manufacturing Optimization - Omniwright Production Boost
+tech_atto_optimizations = {
+	cost = @nanotier6cost2
+	area = engineering
+	tier = 5
+	category = { materials }
+	prerequisites = { "tech_toposophont_systems" "tech_femto_optimizations" }
+	weight = @tier5weight3
+
+    modifier = {
+        description = tech_atto_optimizations_modifier_desc
+    }
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+# Transmuter Torpedoes Ship Component
+tech_nano_torpedoes = {
+	area = engineering
+	cost = @nanotier6cost3
+	tier = 5
+	category = { propulsion }
+	ai_update_type = military
+	prerequisites = { "tech_torpedoes_3" "tech_atto_optimizations" }
+	weight = @tier5weight3
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}	
+	}
+	
+	ai_weight = {
+		factor = 2		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+	}
+}
+
+#Whirlwind Missiles
+tech_nano_swarmer_missile = {
+	area = engineering
+	cost = @nanotier6cost3
+	tier = 5
+	category = { propulsion }
+	ai_update_type = military
+	prerequisites = { "tech_swarmer_missiles_2" "tech_atto_optimizations" }
+	weight = @tier5weight3
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}	
+	}
+	
+	ai_weight = {
+		factor = 2		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+	}
+}
+
+tech_great_archailect = {
+	area = engineering
+	cost = @nanotier6cost3
+	tier = 5
+	category = { voidcraft }
+	ai_update_type = all
+	prerequisites = { "tech_nano_encryption" "tech_nano_decryption" "tech_atto_optimizations" }
+	weight = @tier5weight3
+	is_rare = yes
+
+    modifier = {
+        description = tech_orbital_great_archailect_modifier_desc
+    }
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = 1.5
+			OR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_maniacal"
+				}
+			}
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 0
+			has_policy_flag = ai_outlawed
+		}
+	}
+
+	ai_weight = {
+		factor = 0.5
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+# Sophont Fogs - Planetary Modifier 3
+tech_toposophont_fogs = {
+	cost = @nanotier6cost3
+	area = engineering
+	tier = 5
+	category = { industry }
+	prerequisites = { "tech_great_archailect" }
+	weight = @tier5weight3
+	is_rare = yes
+
+    modifier = {
+        description = tech_toposophont_fogs_modifier_desc
+    }
+
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+tech_toposophont_combat_computers = {
+	area = physics
+	tier = 5
+	cost = @nanotier6cost3
+	category = { computing }
+	ai_update_type = military
+	is_rare = yes
+	prerequisites = { "tech_great_archailect" }
+	weight = @tier5weight3
+
+	# unlocks toposophont combat computers
+
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+
+# Nano Hulls
+tech_repeatable_nano_hulls = {
+	area = engineering
+	cost = @repeatableTechBaseCost
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier
+	category = { materials }
+	levels = -1
+	prerequisites = { "tech_attoscale_mechanics" "tech_self_healing_armor" }
+	weight = @repeatableTechWeight
+	
+	weight_modifier = {
+		factor = @repatableTechFactor
+	}
+	
+	ai_weight = {
+		factor = 1.0
+	}
+	
+	weight_groups = {
+		repeatable
+	}
+	mod_weight_if_group_picked = {
+		repeatable = 0.01
+	}
+	
+	modifier = {
+		ship_hull_mult = 0.05
 	}
 }

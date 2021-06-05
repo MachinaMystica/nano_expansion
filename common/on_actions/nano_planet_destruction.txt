@@ -1,5 +1,5 @@
 # Nano Colossus
-on_destroy_planet_with_PLANET_KILLER_DECONSTRUCTOR = {
+on_destroy_planet_with_PLANET_KILLER_NANO = {
 	events = {
 		crisis.5015
 		nano_colossus.1300

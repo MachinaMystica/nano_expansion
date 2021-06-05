@@ -315,7 +315,6 @@ planet_event = {
 		else = {
 			change_pc = pc_gray_goo
 			clear_deposits = yes
-			add_modifier = { modifier = "terraforming_candidate" days = -1 }
 			add_deposit = d_nanites_deposit
 			add_deposit = d_nanites_deposit
 			add_deposit = d_nanites_deposit

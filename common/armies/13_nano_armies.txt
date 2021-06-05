@@ -5,6 +5,7 @@
 # Nanoswarm Armies
 nanoswarm_army = {
 	damage = 2.00
+	morale_damage = 1.0
 	health = 1.00
 	has_morale = no
 	collateral_damage = 5.0
@@ -25,12 +26,6 @@ nanoswarm_army = {
 	}
 
 	prerequisites = { "tech_military_micromachines" }
-	
-	potential = {
-		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
-		}
-	}
 }
 
 # Nanoswarm Blights
@@ -48,7 +43,7 @@ nanoblight_army = {
 	resources = {
 		category = armies
 		cost = {
-			nanites= 250
+			nanites= 125
 		}
 
 		upkeep = {
@@ -57,11 +52,6 @@ nanoblight_army = {
 	}
 
 	prerequisites = { "tech_identity_subsumption" }
-	potential = {
-		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
-		}
-	}
 }
 
 # Nanite Dreadnought
@@ -89,9 +79,4 @@ nanite_dreadnought = {
 	}
 
 	prerequisites = { "tech_megamachine_strategies" }
-	potential = {
-		owner = {
-			NOT = { has_authority = auth_machine_intelligence }
-		}
-	}
 }

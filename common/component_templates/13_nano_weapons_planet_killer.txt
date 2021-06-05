@@ -3,7 +3,7 @@
 # ####################
 
 weapon_component_template = { # Mass Deconstructor
-	key = "PLANET_KILLER_DECONSTRUCTOR"
+	key = "PLANET_KILLER_NANO"
 	size = planet_killer
 	type = planet_killer
 	use_ship_kill_target = no

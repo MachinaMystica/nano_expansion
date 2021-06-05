@@ -24,6 +24,12 @@ nanoroboticist = {
 		produces = {
 			nanites = 2
 		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_attoscale_mechanics }
+			}
+			nanites = 1
+		}
 		upkeep = {
 			alloys = 5
 		}
@@ -95,6 +101,12 @@ nanoroboticist_drone = {
 		category = planet_nanoroboticists
 		produces = {
 			nanites = 2
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_attoscale_mechanics }
+			}
+			nanites = 1
 		}
 		upkeep = {
 			alloys = 5

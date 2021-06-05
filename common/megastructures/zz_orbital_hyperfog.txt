@@ -9,7 +9,8 @@ orbital_hyperfog_0 = {
 	resources = {
 		category = megastructures
 		cost = {
-			nanites = 3600
+			alloys = 3600
+			nanites = 500
 			influence = 75
 		}
 		upkeep = { energy = 5 }
@@ -124,7 +125,10 @@ orbital_hyperfog_1 = {
 	build_time = 1800
 	resources = {
 		category = megastructures
-		cost = { nanites = 2000 }
+		cost = { 
+			alloys = 3600
+			nanites = 100
+		}
 		upkeep = {
 			energy = 25
 		}
@@ -149,7 +153,7 @@ orbital_hyperfog_1 = {
 
 orbital_hyperfog_2 = {
 	entity = "nano_kilostructure_01_hyperfog_phase_02_entity"
-	construction_entity = "nano_kilostructure_01_hyperfog_phase_02_entity"
+	construction_entity = "nano_kilostructure_01_hyperfog_phase_02_construction_entity"
 	portrait = "GFX_megastructure_gray_goo_world"
 	place_entity_on_planet_plane = no
 	upgrade_from = { orbital_hyperfog_1 }
@@ -157,7 +161,10 @@ orbital_hyperfog_2 = {
 	build_time = 1800
 	resources = {
 		category = megastructures
-		cost = { nanites = 2000 }
+		cost = { 
+			alloys = 4000
+			nanites = 100
+		}
 		upkeep = {
 			energy = 30
 		}
@@ -183,7 +190,7 @@ orbital_hyperfog_2 = {
 
 orbital_hyperfog_3 = {
 	entity = "nano_kilostructure_01_hyperfog_phase_03_entity"
-	construction_entity = "nano_kilostructure_01_hyperfog_phase_03_entity"
+	construction_entity = "nano_kilostructure_01_hyperfog_phase_03_construction_entity"
 	portrait = "GFX_megastructure_gray_goo_world"
 	place_entity_on_planet_plane = no
 	upgrade_from = { orbital_hyperfog_2 }
@@ -191,7 +198,10 @@ orbital_hyperfog_3 = {
 	build_time = 1800
 	resources = {
 		category = megastructures
-		cost = { nanites = 1500 }
+		cost = { 
+			alloys = 4000
+			energy = 10000 
+		}
 		upkeep = {
 			energy = 40
 		}
